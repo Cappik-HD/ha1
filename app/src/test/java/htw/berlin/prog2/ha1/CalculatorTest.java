@@ -108,6 +108,21 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("Test")
+    void NegativeZahlsubtrahierteinerNegativenZahl() {
+        Calculator calc = new Calculator();
 
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(6);
+        calc.pressEqualsKey();
+
+        String expected = "-7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
