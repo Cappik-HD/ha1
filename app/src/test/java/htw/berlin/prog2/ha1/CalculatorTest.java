@@ -109,7 +109,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Test")
+    @DisplayName("Test2")
     void NegativeZahlsubtrahierteinerNegativenZahl() {
         Calculator calc = new Calculator();
 
@@ -120,7 +120,7 @@ class CalculatorTest {
         calc.pressEqualsKey();
 
         String expected = "-7";
-        String actual = calc.readScreen();
+       String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
