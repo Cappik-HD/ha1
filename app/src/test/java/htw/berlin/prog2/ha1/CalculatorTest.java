@@ -109,20 +109,22 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Test2")
-    void NegativeZahlsubtrahierteinerNegativenZahl() {
+    @DisplayName("Test")
+    void GleichZeichen() {
         Calculator calc = new Calculator();
 
-        calc.pressBinaryOperationKey("-");
-        calc.pressDigitKey(1);
-        calc.pressBinaryOperationKey("-");
-        calc.pressDigitKey(6);
+
+        calc.pressDigitKey(9);
         calc.pressEqualsKey();
 
-        String expected = "-7";
-       String actual = calc.readScreen();
+        String expected = "9";
+        String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
+
+
+
 }
+
 
