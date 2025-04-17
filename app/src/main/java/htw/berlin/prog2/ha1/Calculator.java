@@ -77,13 +77,25 @@ public class Calculator {
         var result = switch(operation) {
             case "√" -> Math.sqrt(Double.parseDouble(screen));
             case "%" -> Double.parseDouble(screen) / 100;
-            case "1/x" -> 1 / Double.parseDouble(screen);
+            case "1/x" -> devediere(Double.parseDouble(screen));
             default -> throw new IllegalArgumentException();
         };
+
+        if (screen.equals("Error")) return;
+
         screen = Double.toString(result);
         if(screen.equals("NaN")) screen = "Error";
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
 
+    }
+
+    public double devediere(double wert) {
+        if (wert == 0) {
+            screen = "Error";
+            return 0.0; // Dummy-Wert, wird ignoriert weil screen = "Error"
+        } else {
+            return 1 / wert;
+        }
     }
 
     /**
@@ -119,10 +131,13 @@ public class Calculator {
      */
     public void pressEqualsKey() {
 
+        if (screen.equals("Error")) return;
+
         if (latestOperation.length() == 0) {
             // Keine Operation gesetzt also einfach nichts tun
             return;
         }
+
 
         var result = switch(latestOperation) {
             case "+" -> latestValue + Double.parseDouble(screen);
