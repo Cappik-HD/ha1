@@ -69,7 +69,7 @@ public class Calculator {
      * Quadratwurzel, Prozent, Inversion, welche nur einen Operanden benötigen.
      * Beim Drücken der Taste wird direkt die Operation auf den aktuellen Zahlenwert angewendet und
      * der Bildschirminhalt mit dem Ergebnis aktualisiert.
-     * @param operation "√" für Quadratwurzel, "%" für Prozent, "1/x" für Inversion, ye
+     * @param operation "√" für Quadratwurzel, "%" für Prozent, "1/x" für Inversion, yed
      */
     public void pressUnaryOperationKey(String operation) {
         latestValue = Double.parseDouble(screen);
